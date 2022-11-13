@@ -1,0 +1,15 @@
+<%- include("header.html") -%>
+
+<nav>
+	<ul id="users">
+		<% worlds.forEach(world => { %>
+		<li>
+			<a href="?world=<%= world %>">
+				<%= world %>
+			</a>
+		</li>
+		<% }) %>
+	</ul>
+</nav>
+
+<%- include("footer.html") -%>

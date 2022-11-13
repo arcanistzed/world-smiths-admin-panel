@@ -1,0 +1,15 @@
+<%- include("header.html") -%>
+
+<nav>
+	<ul id="users">
+		<% views.forEach(view => { %>
+		<li>
+			<a href="/admin/<%= view %>">
+				<%= view %>
+			</a>
+		</li>
+		<% }) %>
+	</ul>
+</nav>
+
+<%- include("footer.html") -%>
