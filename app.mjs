@@ -57,7 +57,7 @@ router.get("/choose", async (req, res) => {
 		// Send a list of worlds to choose from
 		const worlds = fs
 			.readdirSync("../worlds", { withFileTypes: true })
-			.filter(dirent => dirent.isDirectory())
+			.filter(dirent => dirent.isDirectory() && dirent.name !== ".vscode")
 			.map(dirent => dirent.name);
 		return res.render("choose", { title: "Choose world", worlds });
 	}
