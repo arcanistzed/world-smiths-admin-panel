@@ -1,6 +1,20 @@
 <%- include("header.html") -%>
 
 <small><%- new Date() -%></small>
-<a href="/">Continue</a>
+<button>Continue</button>
+<noscript>
+	<a href="/">Continue</a>
+</noscript>
+
+<script>
+	const button = document.querySelector("button");
+	button.addEventListener("click", () => {
+		button.textContent = "Please wait...";
+		button.disabled = true;
+		setTimeout(() => {
+			window.location.href = "/";
+		}, 1000);
+	});
+</script>
 
 <%- include("footer.html") -%>
