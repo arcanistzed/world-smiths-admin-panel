@@ -22,8 +22,8 @@ router.get("/", (req, res) => {
 
 router.use(async (req, res, next) => {
 	if (req.url.includes("static")) return next();
-	const status = await (await fetch(`https://${req.headers.host}/api/status`)).json();
 	try {
+		const status = await (await fetch(`https://${req.headers.host}/api/status`)).json();
 		if (status.active && status.users > 0) {
 			return res.status(400).render("error", {
 				title: "Error",
